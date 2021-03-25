@@ -4,7 +4,7 @@ import tkinter
 # from tkinter import Label
 # from tkinter import Entry
 # from tkinter import Tk
-from tkinter import*
+from tkinter import *
 
 # The main window
 win = Tk()
@@ -31,6 +31,7 @@ def instructions_command():
     win2.title("Instructions")
     win2.geometry("400x200")
     win2.resizable(width=0,height=0)
+    #win2.index()
 
     label_of_small_window = Label(win2,text = "Instructions:\n A Random word will be displayed on your screen. \n What you're going to do is, type that word in the textbox and hit \"enter\" \n There will be 30 words. \n You can increase the amount by your choice. \n Your result will be displayed after the timer ends!")
     label_of_small_window.place(x = 0,y = 0)
