@@ -1,10 +1,16 @@
 import keyboard
 #print('Hi ankith i\'m deleting this line of code')
 import tkinter
-# from tkinter import Label
-# from tkinter import Entry
-# from tkinter import Tk
+
 from tkinter import *
+
+
+# FUNCTION
+
+def clear_key(event):
+    Entry_of_text.delete(0, 'end')
+    Entry_of_text.insert(0,"")
+    print('its working')
 
 # The main window
 win = Tk()
@@ -14,9 +20,9 @@ win.title("Typing test")
 # Then entry box
 
 data_of_theEntry = StringVar()
-Entry_of_text = Entry(win, bg ="#808080",fg = "#7DF9FF" ,font = ("Verdana","30","bold","italic") , relief = GROOVE,textvariable = data_of_theEntry,  )
+Entry_of_text = Entry(win, bg ="#808080",fg = "#7DF9FF" ,font = ("Verdana","45","bold","italic") , relief = GROOVE,textvariable = data_of_theEntry,  )
 Entry_of_text.pack(fill = X)
-Entry_of_text.place(x = 100, y = 450, height = 200,width = 1200)
+Entry_of_text.place(x = 100, y = 450,height = 100,width = 1200)
 
 # Some display Labels
 
@@ -31,7 +37,6 @@ def instructions_command():
     win2.title("Instructions")
     win2.geometry("400x200")
     win2.resizable(width=0,height=0)
-    #win2.index()
 
     label_of_small_window = Label(win2,text = "Instructions:\n A Random word will be displayed on your screen. \n What you're going to do is, type that word in the textbox and hit \"enter\" \n There will be 30 words. \n You can increase the amount by your choice. \n Your result will be displayed after the timer ends!")
     label_of_small_window.place(x = 0,y = 0)
@@ -40,9 +45,25 @@ def instructions_command():
     win2.mainloop()
 
 
+
+
+
+
+
 # Buttons --------------------------------------------------------------------
 
 instructions_btn = Button(win, text="Instructions(click)",command = instructions_command , font = ("Verdana",20,'bold','italic'), relief = RIDGE, border = 0,activebackground = "#FFA500")
 instructions_btn.place(x = 0, y = 100)
+
+
+#Binding of key
+
+btn2 = Button(win, text = "CLEAR", relief= GROOVE,border= 0,)
+
+btn2.pack()
+btn2.bind('<Return>',clear_key)
+
+
+#Running of mainloop
 
 win.mainloop()
