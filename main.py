@@ -1,5 +1,6 @@
 import keyboard
 #print('Hi ankith i\'m deleting this line of code')
+# from _typeshed import SupportsKeysAndGetItem
 import tkinter
 
 from tkinter import *
@@ -7,10 +8,10 @@ from tkinter import *
 
 # FUNCTION
 
-def clear_key(event):
+def ClearKey(event):
     Entry_of_text.delete(0, 'end')
     Entry_of_text.insert(0,"")
-    print('its working')
+    #done
 
 # The main window
 win = Tk()
@@ -58,12 +59,10 @@ instructions_btn.place(x = 0, y = 100)
 
 #Binding of key
 
-btn2 = Button(win, text = "CLEAR", relief= GROOVE,border= 0,)
-
-btn2.pack()
-btn2.bind('<Return>',clear_key)
+win.bind('<Return>',ClearKey)
 
 
 #Running of mainloop
 
 win.mainloop()
+
