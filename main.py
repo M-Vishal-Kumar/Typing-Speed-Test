@@ -1,9 +1,13 @@
-import keyboard
+
 #print('Hi ankith i\'m deleting this line of code')
 # from _typeshed import SupportsKeysAndGetItem
 import tkinter
 
+
+
 from tkinter import *
+
+#random words
 
 
 # FUNCTION
@@ -11,7 +15,16 @@ from tkinter import *
 def ClearKey(event):
     Entry_of_text.delete(0, 'end')
     Entry_of_text.insert(0,"")
-    #done
+    
+#The random choices of text that will be displayed to the user:
+
+
+choices = ['laptop','cat','elephant','monkey']
+
+
+
+
+
 
 # The main window
 win = Tk()
@@ -26,11 +39,16 @@ Entry_of_text.pack(fill = X)
 Entry_of_text.place(x = 100, y = 450,height = 100,width = 1200)
 
 # Some display Labels
+#1:
 
 a_label_1 = Label(win, fg = "black", font = ("Verdana",30,"bold","italic"), text = "Test your Typing speed here!")
 a_label_1.place(x = 400, y = 50)
 
+#2:
 
+
+second_label = Label(win, fg = "black", font = ("Verdana",30,"bold","italic"), text = "YO can u read this;)")
+second_label.place()
 #Commands
 
 def instructions_command():
@@ -65,4 +83,3 @@ win.bind('<Return>',ClearKey)
 #Running of mainloop
 
 win.mainloop()
-
