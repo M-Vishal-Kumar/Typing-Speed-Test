@@ -46,7 +46,7 @@ def start():
 
 choices = ['laptop','cat','elephant','monkey','abandon','ability','abortion','about','above','abroad','absence','absolute','absorb','abuse','academic','accident','accuse','achievement','acknowledge','acquire','across','action','addition','partner','perception','performance','permanent','permission','zone','young','vegetable','versus','violation','temperature','telescope','telephone','sweet','survive','suspect','summit','suggestion','struggle','studio','strengthen','symptom',]
 
-# '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
+# '','','','','','','','','','','Dog','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
 # '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
 # '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',]
 
@@ -77,8 +77,8 @@ a_label_1.place(x = 400, y = 50)
 #2:
 
 
-second_label = Label(win, fg = "black", font = ("Verdana",35,"bold","italic"), text = "YO can u read this;)")
-second_label.place(x = 400,y = 300)
+second_label = Label(win, fg = "black", font = ("Verdana",40,"bold","italic"), text = "APPLE")
+second_label.place(x = 550,y = 300)
 
 
 #3:
@@ -92,6 +92,14 @@ timer_label.place(x = 620,y = 565)
 
 timer_label2 = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = "Time left : ")
 timer_label2.place(x = 370,y = 590)
+
+#5:
+
+display_label_of_words = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = "Your Word : ")
+display_label_of_words.place(x = 250 , y =310 )
+
+
+
 #Commands
 
 def instructions_command():
@@ -119,8 +127,8 @@ instructions_btn.place(x = 0, y = 100)
 
 #2:
 
-start_button = Button(win, text="Start!",command = start , font = ("Verdana",20,'bold','italic'), relief = RIDGE, border = 0,activebackground = "#FFA500")
-start_button.place(x = 0, y = 200)
+start_button = Button(win , text="Start!",command = start , font = ("Verdana",20,'bold','italic'), relief = RIDGE, border = 0,activebackground = "#FFA500")
+start_button.place(x = 0, y = 150)
 
 
 
