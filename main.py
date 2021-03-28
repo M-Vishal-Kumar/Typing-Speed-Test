@@ -1,4 +1,6 @@
 
+  
+
 #print('Hi ankith i\'m deleting this line of code')
 # from _typeshed import SupportsKeysAndGetItem
 
@@ -19,6 +21,26 @@ def ClearKey(event):
     Entry_of_text.delete(0, 'end')
     second_label.config(text=random.choice(choices))
     
+time = 30
+def start():
+    global time
+    if time > 0:
+
+        timer_label.config(text = time)
+        time -= 1
+        timer_label.after(1000,start)
+
+    elif time == 0:
+        
+        timer_label.config(text="TIME'S UP!!!!")
+        # timer_label.after_cancel()
+
+
+
+
+
+
+
 #The random choices of text that will be displayed to the user:
 
 
@@ -91,9 +113,15 @@ def instructions_command():
 
 
 # Buttons --------------------------------------------------------------------
-
+#1:
 instructions_btn = Button(win, text="Instructions(click)",command = instructions_command , font = ("Verdana",20,'bold','italic'), relief = RIDGE, border = 0,activebackground = "#FFA500")
 instructions_btn.place(x = 0, y = 100)
+
+#2:
+
+start_button = Button(win, text="Start!",command = start , font = ("Verdana",20,'bold','italic'), relief = RIDGE, border = 0,activebackground = "#FFA500")
+start_button.place(x = 0, y = 200)
+
 
 
 #Binding of key
