@@ -4,6 +4,8 @@
 #print('Hi ankith i\'m deleting this line of code')
 # from _typeshed import SupportsKeysAndGetItem
 
+
+
 #importing needed modules
 
 import tkinter
@@ -13,15 +15,32 @@ from tkinter import messagebox
 from tkinter import font
 
 
-#The Timer Function
-# :
+
 
 
 # FUNCTION
 
+def start_of_words():
+    second_label.config(text= f"{random.choice(choices)}")
+
+
+
+
+
 def ClearKey(event):
+    data = Entry_of_text.get()
+    print(data)
+    if(data == second_label['text']):
+        pass
+    
+
+    
+
+    
     Entry_of_text.delete(0, 'end')
     second_label.config(text=random.choice(choices))
+    
+    
     
 time = 30
 def start():
@@ -51,8 +70,10 @@ def start():
     except:
         start_of_words()
 
-def start_of_words():
-    second_label.config(text= f"{random.choice(choices)}")
+
+
+#now its time for the data storing and evaluation:
+# data = StringVar()
 
 
 
