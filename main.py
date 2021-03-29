@@ -9,6 +9,8 @@
 import tkinter
 import random
 from tkinter import *
+from tkinter import messagebox
+from tkinter import font
 
 
 #The Timer Function
@@ -23,20 +25,34 @@ def ClearKey(event):
     
 time = 30
 def start():
-    global time
-    if time > 0:
+    try:
+        global time
 
-        timer_label.config(text = time)
-        time -= 1
-        timer_label.after(1000,start)
+        if time > 0:
 
-    elif time == 0:
-        
-        timer_label.config(text="TIME'S UP!!!!")
-        # timer_label.after_cancel()
+            timer_label.config(text = time)
+            time -= 1
+            timer_label.after(1000,start)
+
+        elif time == 0:
+
+            timer_label.config(text="TIME'S UP!!!!")
+            reponse = messagebox.askquestion("Time's up!","this is your score : ")
+            if reponse == 0:
+                win.destroy()
+
+            elif reponse == 1:
+                win3 = Tk()
+                win3.geometry("100x100")
+                win3.title("Your score!!")
 
 
+                win3.mainloop()
+    except:
+        start_of_words()
 
+def start_of_words():
+    second_label.config(text= f"{random.choice(choices)}")
 
 
 
@@ -44,11 +60,9 @@ def start():
 #The random choices of text that will be displayed to the user:
 
 
-choices = ['laptop','cat','elephant','monkey','abandon','ability','abortion','about','above','abroad','absence','absolute','absorb','abuse','academic','accident','accuse','achievement','acknowledge','acquire','across','action','addition','partner','perception','performance','permanent','permission','zone','young','vegetable','versus','violation','temperature','telescope','telephone','sweet','survive','suspect','summit','suggestion','struggle','studio','strengthen','symptom',]
-
-# '','','','','','','','','','','Dog','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
-# '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',
-# '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',]
+choices = ['laptop','cat','elephant','monkey','abandon','ability','abortion','about','above','abroad','absence','absolute','absorb','abuse','academic','accident','accuse','achievement','acknowledge','acquire','across','action','addition','partner','perception','performance','permanent','permission','zone','young','vegetable','versus','violation','temperature','telescope','telephone','sweet','survive','suspect','summit','suggestion','struggle','studio','strengthen','symptom',
+'Rabbies','Anthrax','site','Respiration','syntax','error','Smile','Reverse','keyboard','dog','google','hire','saviour','english','french','portugal','land','ocean','monument','stand','stage','commit','window','search','bar','typing','fast','slow','beast','ostrich','cannon','canyon','branch','arguments','provide','overloads','wildcard','library','allow','match','saturated','solution','chemistry',
+]
 
 
 
@@ -77,8 +91,8 @@ a_label_1.place(x = 400, y = 50)
 #2:
 
 
-second_label = Label(win, fg = "black", font = ("Verdana",40,"bold","italic"), text = "APPLE")
-second_label.place(x = 550,y = 300)
+second_label = Label(win, fg = "black", font = ("Verdana",40,"bold","italic"), text = "")
+second_label.place(x = 620,y = 330)
 
 
 #3:
@@ -96,7 +110,7 @@ timer_label2.place(x = 370,y = 590)
 #5:
 
 display_label_of_words = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = "Your Word : ")
-display_label_of_words.place(x = 250 , y =310 )
+display_label_of_words.place(x = 370 , y =340 )
 
 
 
@@ -122,7 +136,7 @@ def instructions_command():
 
 # Buttons --------------------------------------------------------------------
 #1:
-instructions_btn = Button(win, text="Instructions(click)",command = instructions_command , font = ("Verdana",20,'bold','italic'), relief = RIDGE, border = 0,activebackground = "#FFA500")
+instructions_btn = Button(win, text="Instructions(click)",command = instructions_command , font = ("Verdana",20,'bold','italic'), relief = RIDGE, border = 0,activebackground = "#FFA500", state= NORMAL)
 instructions_btn.place(x = 0, y = 100)
 
 #2:
