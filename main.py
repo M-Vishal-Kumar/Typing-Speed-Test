@@ -66,7 +66,7 @@ def start():
 
         elif time == 0:
 
-            timer_label.config(text="TIME'S UP!!!!")
+            timer_label.config(text="Nope")
             reponse = messagebox.showinfo("Time's up!",f"this is your score : \n Correct : {points_correct} \n Incorrect : {points_incorrect} \n Your overall all speed : {points_correct + points_incorrect} words/minute", )
             if reponse == 0:
                 win.destroy()
@@ -123,8 +123,8 @@ a_label_1.place(x = 400, y = 50)
 #2:
 
 
-second_label = Label(win, fg = "black", font = ("Verdana",40,"bold","italic"), text = "")
-second_label.place(x = 620,y = 330)
+second_label = Label(win, fg = "black", font = ("Verdana",60,"bold","italic"), text = "snakes")
+second_label.place(x = 620,y = 300)
 
 
 #3:
@@ -152,7 +152,7 @@ label_of_points.place(x = 0,y = 250)
 
 #7:
 
-label_of_incorrect = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = "Incorrect : 0")
+label_of_incorrect = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = f"Incorrect : {points_incorrect}")
 label_of_incorrect.place(x = 0, y = 300)
 
 
@@ -165,7 +165,7 @@ def instructions_command():
     win2.geometry("400x200")
     win2.resizable(False,False)
 
-    label_of_small_window = Label(win2,text = "Instructions:\n A Random word will be displayed on your screen. \n To test your speed, type that word in the textbox and hit \"enter\" \n There will be 30 words. \n You can increase the amount by your choice. \n Your result will be displayed after the timer ends!")
+    label_of_small_window = Label(win2,text = "Instructions:\n A Random word will be displayed on your screen. \n To test your speed, type that word in the textbox and hit \"enter\" \n There is no word limi. You get 60s, make the most of it \n You can increase the amount by your choice. \n Your result will be displayed after the timer ends!")
     label_of_small_window.place(x = 0,y = 0)
 
 
