@@ -17,6 +17,13 @@ from tkinter import font
 
 
 
+#Variables : 
+points_correct = 0 #initially it is 0.
+points_incorrect = 0
+points_score = 0  #this will be words per minute
+
+
+
 
 # FUNCTION
 
@@ -28,21 +35,25 @@ def start_of_words():
 
 
 def ClearKey(event):
+    global points_incorrect
+    global points_correct
     data = Entry_of_text.get()
-    print(data)
+    # print(data)
     if(data == second_label['text']):
-        pass
-    
+        points_correct += 1
+        label_of_points.config(text= f"Correct : {points_correct}")
+        # print(points_correct)
 
-    
-
-    
+    else:
+        points_incorrect += 1
+        label_of_incorrect.config(text= f"Incorrect : {points_incorrect}")
+        
     Entry_of_text.delete(0, 'end')
     second_label.config(text=random.choice(choices))
     
     
     
-time = 30
+time = 60
 def start():
     try:
         global time
@@ -56,7 +67,7 @@ def start():
         elif time == 0:
 
             timer_label.config(text="TIME'S UP!!!!")
-            reponse = messagebox.askquestion("Time's up!","this is your score : ")
+            reponse = messagebox.showinfo("Time's up!",f"this is your score : \n Correct : {points_correct} \n Incorrect : {points_incorrect} \n Your overall all speed : {points_correct + points_incorrect} words/minute", )
             if reponse == 0:
                 win.destroy()
 
@@ -118,7 +129,7 @@ second_label.place(x = 620,y = 330)
 
 #3:
 
-timer_label = Label(win, fg = "black", font = ("Verdana",60,"bold","italic"), text = "30")
+timer_label = Label(win, fg = "black", font = ("Verdana",60,"bold","italic"), text = "1 Min")
 timer_label.place(x = 620,y = 565)
 
 
@@ -133,6 +144,17 @@ timer_label2.place(x = 370,y = 590)
 display_label_of_words = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = "Your Word : ")
 display_label_of_words.place(x = 370 , y =340 )
 
+#6:
+# points = 0
+label_of_points = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = f"Correct : {points_correct}")
+label_of_points.place(x = 0,y = 250)
+
+
+#7:
+
+label_of_incorrect = Label(win, fg = "black", font = ("Verdana",25,"bold","italic"), text = "Incorrect : 0")
+label_of_incorrect.place(x = 0, y = 300)
+
 
 
 #Commands
@@ -143,7 +165,7 @@ def instructions_command():
     win2.geometry("400x200")
     win2.resizable(False,False)
 
-    label_of_small_window = Label(win2,text = "Instructions:\n A Random word will be displayed on your screen. \n What you're going to do is, type that word in the textbox and hit \"enter\" \n There will be 30 words. \n You can increase the amount by your choice. \n Your result will be displayed after the timer ends!")
+    label_of_small_window = Label(win2,text = "Instructions:\n A Random word will be displayed on your screen. \n To test your speed, type that word in the textbox and hit \"enter\" \n There will be 30 words. \n You can increase the amount by your choice. \n Your result will be displayed after the timer ends!")
     label_of_small_window.place(x = 0,y = 0)
 
 
