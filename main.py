@@ -64,6 +64,7 @@ def ClearKey(event):
     
 time = 60
 def start():
+    
     #Dont add "second label.config" here, cause it just keeps changing the text every 1 second.
     try:
         global time
@@ -77,17 +78,16 @@ def start():
         elif time == 0:
             
             timer_label.config(text="Nope")
-            reponse = messagebox.showinfo("Time's up!",f"this is your score : \n Correct : {points_correct} \n Incorrect : {points_incorrect} \n Your overall all speed : {round(len_of_characters / 5)} words/minute!! \n To retry, close and reopen the programe!" )
+            reponse = messagebox.showinfo("Time's up!",f"this is your score : \n Correct : {points_correct} \n Incorrect : {points_incorrect} \n Your overall all speed : {int(len_of_characters / 5)} words/minute!! \n To retry, close and reopen the programe!" )
             if reponse == 1:
                 exit()
                 
 
             elif reponse == 0:
                 exit()
-                
+        second_label.config(text = f"{random.choice(choices)}")
     except:
         start_of_words()
-
 
 
 
@@ -99,7 +99,8 @@ def start():
 
 
 choices = ['laptop','cat','elephant','monkey','abandon','ability','abortion','about','above','abroad','absence','absolute','absorb','abuse','academic','accident','accuse','achievement','acknowledge','acquire','across','action','addition','partner','perception','performance','permanent','permission','zone','young','vegetable','versus','violation','temperature','telescope','telephone','sweet','survive','suspect','summit','suggestion','struggle','studio','strengthen','symptom',
-'Rabbies','Anthrax','site','Respiration','syntax','error','Smile','Reverse','keyboard','dog','google','hire','saviour','english','french','portugal','land','ocean','monument','stand','stage','commit','window','search','bar','typing','fast','slow','beast','ostrich','cannon','canyon','branch','arguments','provide','overloads','wildcard','library','allow','match','saturated','solution','chemistry',
+'Rabbies','Anthrax','site','Respiration','syntax','error','Smile','Reverse','keyboard','dog','google','hire','saviour','english','french','portugal','land','ocean','monument','stand','stage','commit','window','search','bar','typing','fast','slow','beast','ostrich','cannon','canyon','branch','arguments','provide','overloads','wildcard','library','allow','match','saturated','solution','chemistry','physics','college','coffee','editor','testing','scripts','outline','apps','Cross','Platform','Microsoft','Linux','PowerShell','copyright(C)','output','debug','console','accountss','settings','extensions','collaboration','cinema','movies','share','sessions','contacts','Go',
+'infection','initial','instrument','intention','involvement','island','jacket','Japanese','joint','journalist','kitchen','laboratory','landscape','leadership','leather','legislation','license','limitation','location','long-term','lower','machine','magazine','maintenance','management','manufacturing','movement','musician','negotiation','neighborhood','nervous','nomination','northern','occasionally','offensive','Olympic','peak'
 ]
 
 
