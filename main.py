@@ -85,7 +85,7 @@ def start():
 
             elif reponse == 0:
                 exit()
-        second_label.config(text = f"{random.choice(choices)}")
+                
     except:
         start_of_words()
 
