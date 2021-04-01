@@ -130,7 +130,7 @@ a_label_1.place(x = 330, y = 40)
 #2:
 
 
-second_label = Label(win, fg = "black", font = ("Verdana",60,"bold","italic"), text = "snakes")
+second_label = Label(win, fg = "black", font = ("Verdana",60,"bold","italic"), text = f"{random.choice(choices)}")
 second_label.place(x = 620,y = 300)
 
 
